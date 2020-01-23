@@ -42,14 +42,15 @@ with open(election_csv,newline="", encoding="utf-8") as poll:
 
  # Create two lists out of the data which will be used to find the winner
 candidates = ["Khan", "Correy", "Li","O'Tooley"]
-voteCounts = [khanVotes, correyVotes,liVotes,otooleyVotes]
+voteCounts = [khanVotes, correyVotes, liVotes, otooleyVotes]
 
 # Zip together the lists candidate(key) and voteCounts(value) into a dictionary
 # Find the winner by using the max function on the dictionary
+
 dict_candidates_and_votes = dict(zip(candidates,voteCounts))
 key = max(dict_candidates_and_votes, key=dict_candidates_and_votes.get)
 
-# Print a the summary of the analysis in % terms
+# Print a the summary of the analysis in % 
 khan_percent = (khanVotes/totalVotes) *100
 correy_percent = (correyVotes/totalVotes) * 100
 li_percent = (liVotes/totalVotes)* 100
@@ -67,10 +68,6 @@ print(f"O'Tooley: {otooley_percent:.3f}% ({otooleyVotes})")
 print(f"----------------------------")
 print(f"Winner: {key}")
 print(f"----------------------------")
-
-
-
-
 
 
 #output file path to decide where the text document will be sent, I choose the resources folder in PyPoll
